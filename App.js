@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 
-import AppNavigator from './src/navigation/MainTabNavigator';
+import AppNavigator from './src/navigation/navigator';
 
 export default function App() {
   return (

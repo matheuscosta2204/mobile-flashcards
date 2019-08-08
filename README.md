@@ -1,12 +1,11 @@
 # Mobile Flashcards
 
-Would you rather is a project developed in order to put in practice my studies with redux and react-redux.
+Mobile Flashcards is an app created to help people in order to achieve their objectives.
 It is an area that:
-- Requires a login; 
-- The authed user can create questions;
-- The authed user can choose one option to vote;
-- See the percent of people that vote in the same answer;
-- There is a leader board to see who has answered or created more.
+- Listing all decks;
+- Create a new deck;
+- Add cards to the decks;
+- Start the quiz and see the result in the end;
 
 ## Installation
 
@@ -14,7 +13,7 @@ It is an area that:
 Clone and enter the repo
 
 ```bash
-git clone https://github.com/matheuscosta2204/would-you-rather.git && cd would-you-rather
+git clone https://github.com/matheuscosta2204/mobile-flashcards.git && cd mobile-flashcards
 ```
 ### Second
 Install the node_modules repository

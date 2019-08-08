@@ -3,45 +3,49 @@ import { Platform } from 'react-native';
 import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import DecksScreen from '../screens/decks/decksScreen';
+import DeckDetailsScreen from '../screens/decks/deckDetailsScreen';
+import NewCardScreen from '../screens/cards/newCardScreen';
+import QuizScreen from '../screens/quiz/quizScreen';
+import NewDeckScreen from '../screens/decks/newDeckScreen';
 
-const HomeStack = createStackNavigator(
+const DecksStack = createStackNavigator(
   {
-    Home: HomeScreen,
+    Decks: DecksScreen,
+    DeckDetails: DeckDetailsScreen,
+    NewCard: NewCardScreen,
+    Quiz: QuizScreen,
   }
 );
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+DecksStack.navigationOptions = {
+  tabBarLabel: 'Decks',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        Platform.OS === 'ios' ? `ios-albums` : 'md-albums'
       }
     />
   ),
 };
 
-const LinksStack = createStackNavigator(
+const NewDeckStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    NewDeck: NewDeckScreen,
   }
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+NewDeckStack.navigationOptions = {
+  tabBarLabel: 'New Deck',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} />
   ),
 };
 
 const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-  LinksStack
+  DecksStack,
+  NewDeckStack
 });
 
 export default createAppContainer(tabNavigator);
